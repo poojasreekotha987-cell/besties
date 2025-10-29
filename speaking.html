@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💬 Speaking & Sharing - Best Friends</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    h1 {
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    p {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+    video {
+      width: 80%;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+    #micSection {
+      background: #fff;
+      border-radius: 25px;
+      padding: 25px;
+      margin: 0 auto;
+      max-width: 500px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    #micSection h2 {
+      color: #ff6fa5;
+      margin-bottom: 15px;
+    }
+    button {
+      background: linear-gradient(135deg,#f6d365,#fda085);
+      color: #fff;
+      font-size: 16px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin: 10px;
+    }
+    button:hover {
+      background: linear-gradient(135deg,#fbc2eb,#a6c1ee);
+      transform: scale(1.05);
+    }
+    audio {
+      margin-top: 15px;
+      width: 100%;
+    }
+    a.back-btn {
+      display:inline-block;
+      margin-top:30px;
+      background:#fff;
+      color:#ff7b7b;
+      padding:12px 25px;
+      border-radius:20px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+    a.back-btn:hover {
+      background:#ff9a9e;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>💬 Speaking & Sharing</h1>
+  <p>Speak confidently, sing songs, and share your stories with your best friends!</p>
+
+  <video controls>
+    <source src="speaking.mp4" type="video/mp4">
+  </video>
+
+  <div id="micSection">
+    <h2>🎤 Try Your Mic!</h2>
+    <p>Click the button below to turn on your microphone and start speaking or singing!</p>
+    <button id="startMic">🎙️ Start Mic</button>
+    <button id="stopMic" disabled>🔇 Stop Mic</button>
+    <audio id="micAudio" controls autoplay></audio>
+  </div>
+
+  <a href="index.html" class="back-btn">⬅ Back to Courses</a>
+
+  <script>
+    let micStream;
+    const micAudio = document.getElementById('micAudio');
+    const startMicBtn = document.getElementById('startMic');
+    const stopMicBtn = document.getElementById('stopMic');
+
+    startMicBtn.addEventListener('click', async () => {
+      try {
+        micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        micAudio.srcObject = micStream;
+        startMicBtn.disabled = true;
+        stopMicBtn.disabled = false;
+      } catch (err) {
+        alert('Microphone access denied or not available 🎤');
+      }
+    });
+
+    stopMicBtn.addEventListener('click', () => {
+      if (micStream) {
+        const tracks = micStream.getTracks();
+        tracks.forEach(track => track.stop());
+        micAudio.srcObject = null;
+        startMicBtn.disabled = false;
+        stopMicBtn.disabled = true;
+      }
+    });
+  </script>
+</body>
+</html>

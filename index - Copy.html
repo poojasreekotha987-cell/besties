@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Kids Online School</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>besties</h1>
+    <p class="tagline">We create a space where all kids find kids 🌈</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="#video-room">Kids Video Room</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="features">
+    <div class="feature">
+      <h3>Live Classes</h3>
+      <p>Engaging live sessions with trained teachers.</p>
+    </div>
+    <div class="feature">
+      <h3>Creative Learning</h3>
+      <p>Fun activities, music, and art-based education.</p>
+    </div>
+    <div class="feature">
+      <h3>Safe Environment</h3>
+      <p>Child-friendly platform with parental access.</p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <h3>Our Mission</h3>
+    <p>To bring kids from all over the world into one safe, joyful, and creative learning space where they can find friends, share ideas, and explore their imagination.</p>
+  </section>
+<!-- Courses Section -->
+<section class="courses-section" id="courses">
+  <h2>📚 Our Fun & Friendship Courses</h2>
+  <p>At <b>Best Friends</b>, learning is full of color, laughter, and teamwork! Explore our joyful courses designed to make every child smile while learning.</p>
+
+  <div class="course-box">
+    <div class="course-box">
+  <a href="story.html" class="course-card">📖 Storytelling Time</a>
+  <a href="math.html" class="course-card">🧮 Fun with Numbers</a>
+  <a href="dance.html" class="course-card">💃 Dance & Movement</a>
+  <a href="speaking.html" class="course-card">💬 Speaking & Sharing</a>
+  <a href="behaviour.html" class="course-btn">🌟 Behaviour Training</a>
+  </div>
+</section>
+  <footer>
+    <p>&copy; 2025 besties | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>besties</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <!-- Kids Meet Kids Section -->
+  <section class="kids-meet-section">
+    <h2>🌈 Kids Meet Kids</h2>
+    <p>We create a fun space where every kid can meet new friends, learn, and play together online!</p>
+  </section>
+
+  <!-- Video Room Section (directly on homepage) -->
+  <section class="video-section" id="video-room">
+    <h2>🎥 Kids Video Room</h2>
+    <p>Join the live room to talk, laugh, and learn with your friends!</p>
+
+    <div class="video-box">
+      <iframe
+        src="https://meet.jit.si/HappyKidsRoom"
+        allow="camera; microphone; fullscreen; display-capture"
+        style="width: 100%; height: 500px; border-radius: 20px; border: none;">
+      </iframe>
+    </div>
+    <p class="note">🎯 Tip: Use your real name only with parent permission!</p>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Happy Kids Online School | Designed with ❤️ for children everywhere</p>
+  </footer>
+<script>
+  // Smooth scrolling for all navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+</body>
+</html>
+<section id="about-ceo" style="background-color:#ffe6f0; text-align:center; padding:40px 20px; font-family:'Poppins', sans-serif;">
+  <h2 style="color:#ff66b2; font-size:28px; margin-bottom:15px;">👩‍💼 About Our CEO</h2>
+  
+  <img src="https://photos.app.goo.gl/u1mPkmhagM1LzdUW7" 
+       alt="CEO Pooja Sree Kotha" 
+       style="width:150px; height:150px; border-radius:50%; object-fit:cover; margin-bottom:15px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+  
+  <h3 style="margin:10px 0; color:#333;">Pooja Sree Kotha</h3>
+  <p style="color:#555; max-width:600px; margin:auto; font-size:16px; line-height:1.6;">
+    Pooja Sree Kotha, the visionary CEO of <strong>Besties</strong>, is passionate about helping kids grow with kindness, creativity, 
+    and confidence. She believes that joyful learning and positive behaviour training can shape a brighter future for every child.
+  </p>
+</section>
